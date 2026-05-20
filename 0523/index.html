@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>접속하기</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px; }
+        input { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; border: 1px solid #ddd; border-radius: 4px; }
+        button { width: 100%; padding: 11px; margin-top: 10px; cursor: pointer; border-radius: 4px; border: none; font-weight: bold; }
+        
+        /* 버튼 색상 분리 */
+        .btn-primary { background-color: #007bff; color: white; }
+        .btn-secondary { background-color: #6c757d; color: white; }
+        
+        .toggle-link { text-align: center; margin-top: 15px; font-size: 14px; color: #555; }
+        .toggle-link span { color: #007bff; cursor: pointer; text-decoration: underline; }
+        
+        /* 처음에는 회원가입 창을 숨깁니다 */
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. 로그인 폼 (기본 홈 화면) -->
+    <div id="loginForm">
+        <h2>로그인</h2>
+        <input type="text" id="loginUsername" placeholder="아이디">
+        <input type="password" id="loginPassword" placeholder="비밀번호">
+        <button id="btnLogin" class="btn-primary">로그인</button>
+        
+        <div class="toggle-link">
+            아직 계정이 없으신가요? <span id="goSignUp">회원가입하기</span>
+        </div>
+    </div>
+
+    <!-- 2. 회원가입 폼 (처음엔 숨김) -->
+    <div id="signUpForm" class="hidden">
+        <h2>회원가입</h2>
+        <input type="text" id="regNickname" placeholder="이름">
+        <input type="text" id="regUsername" placeholder="아이디">
+        <input type="password" id="regPassword" placeholder="비밀번호">
+        <button id="btnSignUp" class="btn-primary">가입 완료</button>
+        <button id="btnCancel" class="btn-secondary">취소</button>
+    </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
